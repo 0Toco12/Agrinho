@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+:root {
+    --corFundo: linear-gradient(to top, #767575, #fff);
+    --sombra: #000;
+    --principal: #0f6;
+    --branco: #fff;
+    --brilho: #517cfd;
+    --verde: #038236; 
+    --bolinha: rgb(145, 142, 142);
+}
+
 html {
     height: 100vh;
     display: flex;
@@ -13,14 +23,17 @@ html {
 
 body {
     width: 95%;
+    height: 90.712074303405572755417956656347%;
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to top, #bab7b7, #fff);
+    background: var(--corFundo);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    box-shadow: 0.625rem 0.625rem 0.625rem #000,
-                0.625rem 0.625rem 3.125rem #000,
-                0.625rem 0.625rem 6.125rem #000;
+    box-shadow: 0.625rem 0.625rem 0.625rem var(--sombra),
+                0.625rem 0.625rem 3.125rem var(--sombra),
+                0.625rem 0.625rem 6.125rem var(--sombra);
 }
+
+/*-------------Cabeçalho-------------*/
 
 header {
     display: flex;
@@ -30,7 +43,7 @@ header {
 
 h1 {
     padding-top: 0.3125rem;
-    color: #0f6;
+    color: var(--principal);
     align-self: center;
     font-weight: 900;
     font-size: 5rem;
@@ -44,10 +57,11 @@ h1 {
 }
 
 h1 span {
-    animation: shine 2s linear infinite;
+    animation: brilha 2s linear infinite;
     margin: 0;
     align-self: center;
     justify-self: center;
+    text-shadow: 2px 2px 5px var(--sombra);
 }
 
 h1 span:nth-child(1) {
@@ -108,27 +122,29 @@ h1 span:nth-child(14) {
 }
 
 
-@keyframes shine {
+@keyframes brilha {
     0%,80% {
-        color: #0f6;
-        text-shadow: none;
+        color: var(--principal);
+        text-shadow: 2px 2px 5px var(--sombra);
     }
     100% {
-        color: #fff;
-        text-shadow: 0 0 10px #517cfd,
-                    0 0 20px #517cfd,
-                    0 0 40px #517cfd,
-                    0 0 80px #517cfd,
-                    0 0 120px #517cfd,
-                    0 0 160px #517cfd;
+        color: var(--branco);
+        text-shadow: 0 0 10px var(--brilho),
+                    0 0 20px var(--brilho),
+                    0 0 40px var(--brilho),
+                    0 0 80px var(--brilho),
+                    0 0 120px var(--brilho),
+                    0 0 160px var(--brilho);
     }
 }
 
 
 .fa-map-location-dot {
     font-size: 3.125rem;
-    color: #0f6;
+    color: var(--principal);
 }
+
+/*-------------Página 1-------------*/
 
 #pag1 {
     width: 100%;
@@ -144,7 +160,6 @@ h1 span:nth-child(14) {
 }
 
 #div1, #div2 {
-
     width: 50rem;
     display: flex;
     align-items: center;
@@ -155,13 +170,13 @@ h1 span:nth-child(14) {
     flex-direction: column;
 }
 
-h2 {
+#subtitulo1 {
     font-size: 4.375rem;
 }
 
 p {
     font-size: x-large;
-    margin: 1.875rem 0;
+    margin: 1.875rem 0;;
 }
 
 button {
@@ -173,20 +188,21 @@ button {
     border-bottom-left-radius: 3.125rem;
     border-bottom-right-radius: 3.125rem;
     font-size: x-large;
-    background: #0f6;
+    background: var(--principal);
     font-weight: bold;
     text-transform: uppercase;
+    box-shadow: 5px 5px 5px var(--sombra);
 }
 
 button:hover {
     cursor: pointer;
-    border: 2px solid #000;
+    border: 2px solid var(--sombra);
 }
 
-img {
+#campo {
     width: 100%;
     border-radius: 5%;
-    box-shadow: 10px 10px 10px #000;
+    box-shadow: 10px 10px 10px var(--sombra);
 }
 
 #div3 {
@@ -199,29 +215,29 @@ img {
 
 .fa-circle {
     width: 2rem;
-    margin: 1.25rem 0;
+    margin: 1.25rem 1rem;
 }
 
-#circle1 {
-    color: black;
+.selecionado {
+    color: var(--sombra);
 }
 
-#circle2 {
-    color: rgb(145, 142, 142);
-}
-
-#circle3 {
-    color: rgb(145, 142, 142);
+.nSelecionado {
+    color: var(--bolinha);
 }
 
 label {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(3, 130, 54);
+    color: var(--principal);
     font-size: x-large;
     font-weight: bold;
     text-transform: uppercase;
+    position: fixed;
+    bottom: 3rem;
+    left: 47%;
+    text-shadow: 2px 2px 2px var(--sombra);
 }
 
 label p:hover {
@@ -236,6 +252,106 @@ label p:hover {
     cursor: pointer;
 }
 
+/*-------------Página 2-------------*/
+
+#pag2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div4 {
+    width: 60%;
+    text-align: center;
+}
+
+#subtitulo2 {
+    font-size: 3rem;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+strong {
+    color: var(--principal);
+    text-shadow: 2px 2px 2px var(--sombra);
+}
+
+#div5 {
+    display: flex;
+    flex-direction: row;
+}
+
+#div6, #div7 {
+    width: 50rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 0 3.125rem;
+    flex-direction: column;    
+}
+
+#imagem {
+    width: 85%;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px var(--sombra);
+}
+
+
+/*-------------Transição-------------*/
+
+#marcado {
+    display: none;
+}
+
+#marcado:checked ~ #pag1  {
+    animation: some 1s linear forwards;
+}
+
+@keyframes some {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+#pag2 {
+    opacity: 0; /* Inicialmente escondido */
+    visibility: hidden; /* Inicialmente não ocupa espaço */
+    width: 0;
+    height: 0;
+    position: fixed;
+}
+
+@keyframes aparece {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        width: auto;
+        height: auto;
+        position: fixed;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+}
+
+#marcado:checked ~ #pag2 {
+    animation: aparece 1s linear forwards;
+    animation-delay: 2s;
+}
+
+/*-------------------Responsividade-------------------*/
+
 @media (max-width: 1660px) {
     html {
         height: auto;
@@ -247,7 +363,7 @@ label p:hover {
         margin: 20px 0;
     }
 
-    section {
+    #pag1 {
         display: flex;
         flex-direction: row;
     }
@@ -286,10 +402,14 @@ label p:hover {
     #div1 p {
         font-size: x-large;
     }
+
+    #div3 {
+        margin-left: 50px;
+    }
 }
 
 @media (max-width: 770px) {
-    section {
+    #pag1 {
         flex-direction: column;
     }
 
@@ -304,6 +424,7 @@ label p:hover {
 }
 
 @media (max-width: 660px) {
+
     h1 {
         font-size: 2rem;
         line-height: 1.5rem;
@@ -328,12 +449,4 @@ label p:hover {
     button {
         font-size: large;
     }
-}
-
-#marcado {
-    display: none;
-}
-
-#marcado:checked ~ section {
-    display: none;
 }
