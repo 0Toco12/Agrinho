@@ -23,14 +23,15 @@ html {
 
 body {
     width: 95%;
-    height: 90.712074303405572755417956656347%;
+    height: 96%;
     font-family: "Roboto", sans-serif;
     background: var(--corFundo);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    box-shadow: 0.625rem 0.625rem 0.625rem var(--sombra),
-                0.625rem 0.625rem 3.125rem var(--sombra),
-                0.625rem 0.625rem 6.125rem var(--sombra);
+    box-shadow: 10px 10px 10px var(--sombra),
+                10px 10px 10px var(--sombra),
+                10px 10px 100px var(--sombra),
+                10px 10px 100px var(--sombra);
 }
 
 /*-------------Cabeçalho-------------*/
